@@ -2,7 +2,7 @@
      $resultQuery = selecionarTodasNoticias();
 ?>
 
-<form action="pro_noticias.php" method="post">
+<form action="pro_noticias.php" method="post" enctype="multipart/form-data" >
     <input type="hidden" name="mandato" value="agregar_noticia" />
         <input  required type="text" name="titulo" placeholder="Nombre Noticia" />
             <br/>
@@ -10,8 +10,13 @@
         
         <br/>   
         <textarea required name="detalle" id="" cols="30" rows="10" placeholder="Detalle de la noticias" ></textarea>
-        <br/>   <br/>   <button type="submit">Agregar</button>
-
+        
+        
+        <br/> 
+         Imagen:
+    <input type='file' name='imagen' />
+          <br/>   <button type="submit">Agregar</button>
+   
 </form>
 
 <table border="1"> 
@@ -24,6 +29,9 @@
         </th>
         <th>
             EXTRACTO
+        </th>
+        <th>
+            IMAGEN
         </th>
         <th>
             OPCIONES
@@ -41,6 +49,9 @@
         </td>
         <td>
             <?php echo $registroNoticia["extracto"]; ?>
+        </td>
+        <td>
+            <img src='upload/<?php echo $registroNoticia["img"] ?>' width='30'/>
         </td>
         <td>
             <a href="editar_noticia.php?id_noticia=<?php echo $registroNoticia["id"]; ?>">

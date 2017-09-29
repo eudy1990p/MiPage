@@ -33,12 +33,14 @@
     }
 
     function insertarNoticia(){
+        
         $conn = conexion();
+        $imagen = uploadImage();
         $insertarNoticia =" 
             insert into noticias
-            (titulo,extracto,detalle,fecha_publicacion,id_usuario)
+            (titulo,extracto,detalle,fecha_publicacion,id_usuario,img)
             values
-            ('".$_REQUEST["titulo"]."','".$_REQUEST["extracto"]."','".$_REQUEST["detalle"]."',now(),'".$_SESSION["id"]."')
+            ('".$_REQUEST["titulo"]."','".$_REQUEST["extracto"]."','".$_REQUEST["detalle"]."',now(),'".$_SESSION["id"]."','$imagen')
          ";
         $resultQuery = mysqli_query($conn,$insertarNoticia); 
         if($resultQuery){
@@ -73,6 +75,9 @@
         
     }
 
+
+
+
     function editarNoticia(){
         $conn = conexion();
         $insertarNoticia =" 
@@ -105,5 +110,23 @@
         }
     }
 
+
+    function uploadImage()
+    {
+        $dir_subida = 'upload/';
+        $fichero_subido = $dir_subida . basename($_FILES['imagen']['name']);
+
+        echo '<pre>';
+        if (move_uploaded_file($_FILES['imagen']['tmp_name'], $fichero_subido)) {
+            echo "El fichero es válido y se subió con éxito.\n";
+        } else {
+            echo "";
+        }
+
+        echo 'Más información de depuración:';
+        print_r($_FILES);
+        print "</pre>";
+        return  basename($_FILES['imagen']['name']);
+    }
 
 ?>

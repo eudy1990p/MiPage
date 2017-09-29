@@ -2,7 +2,7 @@
 <ul>
         <?php if(isset($_SESSION["id"])){ ?>
         <li>    
-            <a href="">
+            <a href="index.php">
                 INICIO       
             </a>
 
