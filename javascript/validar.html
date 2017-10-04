@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <style>
+            .mal{
+                color: red;
+            }
+        </style>
+    </head>
+    <body onload="">
+        <form id="idForm" action="lagarza.php" method="post">
+            <input type="text" id="idNombre" placeholder="Nombre" />
+            <span id="idnombrespan" class="mal">dadsafd</span>
+            <br/><br/>
+            <input type="text" id="idApellido" placeholder="Apellido" /> 
+            <span id="idapellidospan"  class="mal"></span>
+            <br/><br/>
+            <input type="text" id="idP1" placeholder="Clave" /> <br/>
+            <span id="idP1span"  class="mal"></span>
+            <br/>
+            <input type="text" id="idP2" placeholder="Repetir Clave" /> <span id="idP2span"  class="mal"></span>
+            <br/><br/>
+            <button type="button" onclick="" >Enviar</button>
+        </form>
+        
+        <div id="cargarHtml">
+        
+        </div>
+        
+        
+       
+  
+         <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript">
+           $(document).ready(
+               function (){
+                   $.ajax({
+              url: "listado.html",
+              method: "POST",
+              dataType: "html",
+                success: function(dato){
+                    //alert(pagina);
+                    $("#cargarHtml").html(dato);
+                }
+            });
+                          } );
+           
+        </script>
+    </body>
+</html>

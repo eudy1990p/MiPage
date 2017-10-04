@@ -1,0 +1,108 @@
+<!doctype html>
+<html> 
+    <head>
+        
+    </head>
+    <body id="body">
+        asdfasdf sadfsa dfasd fasdf adfasddf wdad fas
+        
+        <input type="text" id="idnombre" value="hola"/>
+    
+        <button type="button" onclick="ocultarElemento();">
+            Facebook
+        </button>
+        <a href="javascript:void(0);" onclick="msj();">
+            google
+        </a>
+        
+        
+        
+        
+        
+        
+        <script type="text/javascript"  >
+            function msj(){
+               // window.location = "http://"+ruta;
+            alert(document.getElementById("idnombre").value); //alert(document.getElementById("body").innerHTML);
+            }
+            
+            //setInterval(ocultarElemento,1000);
+            setInterval(cambiarcolor,3000);
+            function cambiarcolor(){
+               //alert("ook");
+                if(document.getElementById("body").style.color == "red"){
+                    document.getElementById("body").style.color = "blue";
+                }else if(document.getElementById("body").style.color == "blue"){
+                    document.getElementById("body").style.color = "pink";
+                }else{
+                    document.getElementById("body").style.color = "red";
+                }
+                
+                
+            }
+            
+            function ocultarElemento(){
+                
+                if(document.getElementById("idnombre").type == "text"){
+                    document.getElementById("idnombre").type="hidden";
+                }
+                if(document.getElementById("idnombre").type == "hidden"){
+                    document.getElementById("idnombre").type="text";
+                }
+            }
+            //msj();
+            
+            
+            
+            
+            
+            
+            
+            
+            /*var array = [9,3,4,56,7,8];
+            
+            for(i = 0 ; i < (array.length) ; i++){
+                console.warn(array[i]);
+            }
+            /*for(i = 0 ; i <= 10 ; i++){
+                console.warn(i);
+            }
+            i = 0 ;
+            while( i <= 10 ){
+                console.error(i);
+                 i++;
+            }
+            */
+            
+            //var respuesta = confirm("realmente quieres eliminar?");
+            //var respuesta = 0;
+            /*if(respuesta == 1){
+               alert("todo bien ");
+               }else if(respuesta == 2){
+                    alert("mas o menos ");
+                }else{
+               alert("ufff que mal ");
+               }*/
+            /*switch(respuesta){
+                
+                case 1:
+                    alert("todo bien ");
+                break;
+                case 2:
+                    alert("mas o menos ");
+                break;
+                default:
+                    alert("ufff que mal ");
+                    break;
+                        
+            }*/
+            
+            //console.log(respuesta);
+            /*alert("ok klk con klk");
+            console.log("ok gabriel que haces");
+            console.info("ok gabriel que haces");
+            console.error("ok gabriel que haces");
+            console.warn    ("ok gabriel que haces");*/
+        </script>
+    </body>
+</html>
